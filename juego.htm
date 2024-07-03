@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Fuente Augusta: https://www.dafont.com/es/augusta.font 
+     Fuente Montserrat: https://fonts.google.com/ 
+     Fondo cartas: https://pngtree.com/freebackground/kraft-paper-texture-brown-background_1465000.html
+     Imágenes cartas: https://bing.com/create
+     Audio lucha: https://freesound.org/people/JoelAudio/sounds/77611/
+     Mapa: https://es.fiverr.com/alondrauk/draw-a-professional-fantasy-medieval-map
+     -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego rol</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="module" src="js/juegoUI.js"></script>
+</head>
+<body>
+    <header>
+        <h1>La batalla de las montañas</h1>
+    </header>
+    <main>
+        <section id="partida">
+            <input type="button" value="Nueva partida" id="nuevaPartida" class="boton">
+            <div>Turno: <span id="turno">1</span></div>
+            <input type="button" value="lucha" id="jugarTurno" class="boton" disabled>
+        </section>
+        <section id="participantes">
+         
+          <!--   <div class="carta">
+                <img src="imagenes/lobo.jpeg" alt="">
+                <p class="nombre">Caballero</p>
+                <div class="estadisticas">
+                    <div>
+                        <div>Ataque:</div>
+                        <div>Defensa:</div>
+                        <div>Salud:</div>
+                    </div>
+                    <div>
+                        <div>0</div>
+                        <div>0</div>
+                        <div>0</div>
+                    </div>
+                    <div class="puntos">
+                        <div>Puntos</div>
+                        <div>0</div>
+                    </div>
+                </div>                
+            </div>
+            <div class="carta">
+                <img src="imagenes/minotauro.jpeg" alt="">
+                <p class="nombre">Caballero</p>                
+                <div class="estadisticas">
+                    <div>
+                        <div>Ataque:</div>
+                        <div>Defensa:</div>
+                        <div>Salud:</div>
+                    </div>
+                    <div>
+                        <div>0</div>
+                        <div>0</div>
+                        <div>0</div>
+                    </div>
+                    <div class="puntos">
+                        <div>Puntos</div>
+                        <div>0</div>
+                    </div>
+                </div>                
+            </div>
+            <div class="carta">
+                <img src="imagenes/orco.jpeg" alt="">
+                <p class="nombre">Caballero</p>
+                <div class="estadisticas">
+                    <div>
+                        <div>Ataque:</div>
+                        <div>Defensa:</div>
+                        <div>Salud:</div>
+                    </div>
+                    <div>
+                        <div>0</div>
+                        <div>0</div>
+                        <div>0</div>
+                    </div>
+                    <div class="puntos">
+                        <div>Puntos</div>
+                        <div>0</div>
+                    </div>
+                </div>                
+            </div>
+            <div class="carta">
+                <img src="imagenes/troll.jpeg" alt="">
+                <div class="estadisticas">
+                    <div>
+                        <div>Ataque:</div>
+                        <div>Defensa:</div>
+                        <div>Salud:</div>
+                    </div>
+                    <div>
+                        <div>0</div>
+                        <div>0</div>
+                        <div>0</div>
+                    </div>
+                    <div class="puntos">
+                        <div>Puntos</div>
+                        <div>0</div>
+                    </div>
+                </div>                
+            </div>
+            -->
+        </section>
+        <!-- Quitamos la plantilla de participantes peus en JS usaremos innerHTML = "" para
+         borrar las cartas anteriores y esta debe seguir existiendo -->
+        <div class="carta" id="plantillaCarta">
+            <img alt="">
+            <p class="nombre"></p>
+            <div class="estadisticas">
+                <div>
+                    <div>Ataque:</div>
+                    <div>Defensa:</div>
+                    <div>Salud:</div>
+                </div>
+                <div>
+                    <div class="ataque">0</div>
+                    <div class="defensa">0</div>
+                    <div class="salud">0</div>
+                </div>
+                <div class="puntos">
+                    <div>Puntos</div>
+                    <div class="valorPuntos">0</div>
+                </div>
+            </div>
+        </div>
+        <section id="lucha">
+            <div class="vs">VS
+            </div>
+            <div class="carta" id="atacante">
+                <img src="imagenes/troll.jpeg" alt="">
+                <p class="nombre"></p>
+                <div class="estadisticas">
+                    <div>
+                        <div>Ataque:</div>
+                        <div>Defensa:</div>
+                        <div>Salud:</div>
+                    </div>
+                    <div>
+                        <div class="ataque">0</div>
+                        <div class="defensa">0</div>
+                        <div class="salud">0</div>
+                    </div>
+                    <div class="puntos">
+                        <div>Puntos</div>
+                        <div class="valorPuntos">0</div>
+                    </div>
+                </div>                
+            </div>
+            <div class="carta" id="defensor">
+                <img src="imagenes/troll.jpeg" alt="">
+                <p class="nombre"></p>
+                <div class="estadisticas">
+                    <div>
+                        <div>Ataque:</div>
+                        <div>Defensa:</div>
+                        <div>Salud:</div>
+                    </div>
+                    <div>
+                        <div class="ataque">0</div>
+                        <div class="defensa">0</div>
+                        <div class="salud">0</div>
+                    </div>
+                    <div class="puntos">
+                        <div>Puntos</div>
+                        <div class="valorPuntos">0</div>
+                    </div>
+                </div>  
+            </div>
+        </section>
+
+        <section id="ganadores">
+            <h1>Ganadores</h1>
+            <div id="listado">
+                <p>Caballero</p>
+                <p>Nimfa</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
